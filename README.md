@@ -7,7 +7,7 @@ This work aims to advance the understanding of the prevalence, progression, and 
 Here in this repository, we share the source code for constructing these atlases and provide example data for running it due to data sharing restrictions. Additionally, we provide statistical data derived from the study cohort (N=16,300):
 - The 3D point set of the mean shape of coronary artery tree.
 - Frequency of each segment following AHA-18 coronary artery segmenting standard stratified by age and sex groups.
-- coronary atlases revealing statistical fine-grained spatial distribution of plaques, stenosis, and high-risk features stratified by age and sex groups.
+- Coronary atlases revealing statistical fine-grained spatial distribution of plaques, stenosis, and high-risk features stratified by age and sex groups.
 
 <div align="center">
   <img src="figures/pla_prev_atlas.png" alt="Example Image" width="800">
@@ -79,8 +79,8 @@ Plaque_Population_Study/
         - `mean_segment_shapes.json` is the mean centerline shape of each individual segment in our cohort. `mean_concat_pts.json` stores the estimated intersection points on the mean segment shapes.
         - `mean_TREE_shapes.json` is the mean shape of coronary artery tree of our cohort.  `TREE_concat_pts.json` are intersection points on the reorganized coronary artery tree.
         - Other files are byproducts during execution of `Averaging_Ctl().execute()`
-    6. `cohort.csv`: Metadata of example data
-    7. `integrated_feature_table_samples.csv`: Characteristics of CCTA-detected plaques of example data.
+    6. `cohort.csv`: metadata of example data
+    7. `integrated_feature_table_samples.csv`: characteristics of CCTA-detected plaques of example data.
 2. **`results_demo/`**: results at different analysis levels (subject, segment, point).
     1. `subject_level/`: example of subject-level analysis table
     2. `segment_level/`: 
