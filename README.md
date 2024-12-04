@@ -9,39 +9,40 @@ Here in this repository, we share the source code for constructing these atlases
 - frequency of each segment following AHA-18 coronary artery segmenting standard stratified by age and sex groups.
 - atlases related to existence of plaques, stenosis, and high-risk features stratified by age and sex groups.
 
-<p align="center">
-  <img src="figures/pla_preva_atlas.png" alt="Example Image" width="500">
-  Figure 1. Plaque prevalence atlas of the entire cohort.
-</p>
+<div align="center">
+  <img src="figures/pla_prev_atlas.png" alt="Example Image" width="800">
+  <p><b>Figure 1.</b> Plaque prevalence atlas of the entire cohort.</p>
+</div>
 
 ## Usage
 
-1. The project runs in Python 3.9 environment with CPU. Install required libraries in Python environment.
+1. The project runs in Python 3.9 environment with CPU.
+   Use following command to install required libraries in Python environment:
     
     ```bash
     pip install -r requirements.txt
     ```
     
-2. Run the `demo.py` for generate plaque mapping files and visualize atlases.
+3. Run the `demo.py` for generate plaque mapping files and visualize atlases.
     
     ```bash
     python demo.py
     ```
     
-    1. three steps are conducted:
-        - `Averaging_Ctl()`: Calculate the mean centerline shape of coronary tree as the template.
-            - `Averaging_Ctl().reorganize()` can be independently executed to get the targeted results with `mean_segment_shapes.json` and `mean_concat_pts.json` as inputs, derived from the whole cohort, instead of example data.
-            - `Averaging_Ctl().show_avg_shapes()` can be independently executed to visualize the centerline template.
-        - `Plaque_mapping()`: Mapping plaques detected in the cohort along with their characteristics to the template. Results aggregate characteristics of plaque mapped to a point in the coronary artery template as a set. Here, we obtain results from the example data.
-        - `Visualization()`: Statistical analysis and visualization of plaque characteristics stratified by age and sex groups.
-          The atlas data from the study cohort serves as inputs, rather than the example data. 
-            
-            - `Visualization().prevalence_ctl_dist()`: visualization of plaque prevalence atlases.
-            - `Visualization().char_ctl_dist()`: visualization of atlases related to stenosis, and high-risk features.
-                
-                Since the atlas data from our cohort was directly used, the statistical analysis part has been commented out. However, if needed, you can uncomment the relevant sections in the code to compute the atlas data based on the results from the previous step. The core function for this is `Visualization().get_draw_dict()`.
-                
-            - **Note**: we use a small subset as example data here. Therefore, it is not accurate to calculate atlas data from the results of the previous step. To use your own data, ensure that plaque information and segment counts for a cohort with a sufficient number of subjects are provided to obtain statistically meaningful results.
+   Three steps are conducted:
+      - `Averaging_Ctl()`: Calculate the mean centerline shape of coronary tree as the template.
+          - `Averaging_Ctl().reorganize()` can be independently executed to get the targeted results with `mean_segment_shapes.json` and `mean_concat_pts.json` as inputs, derived from the whole cohort, instead of example data.
+          - `Averaging_Ctl().show_avg_shapes()` can be independently executed to visualize the centerline template.
+      - `Plaque_mapping()`: Mapping plaques detected in the cohort along with their characteristics to the template. Results aggregate characteristics of plaque mapped to a point in the coronary artery template as a set. Here, we obtain results from the example data.
+      - `Visualization()`: Statistical analysis and visualization of plaque characteristics stratified by age and sex groups.
+        The atlas data from the study cohort serves as inputs, rather than the example data. 
+          
+          - `Visualization().prevalence_ctl_dist()`: visualization of plaque prevalence atlases.
+          - `Visualization().char_ctl_dist()`: visualization of atlases related to stenosis, and high-risk features.
+              
+              Since the atlas data from our cohort was directly used, the statistical analysis part has been commented out. However, if needed, you can uncomment the relevant sections in the code to compute the atlas data based on the results from the previous step. The core function for this is `Visualization().get_draw_dict()`.
+              
+          - **Note**: we use a small subset as example data here. Therefore, it is not accurate to calculate atlas data from the results of the previous step. To use your own data, ensure that plaque information and segment counts for a cohort with a sufficient number of subjects are provided to obtain statistically meaningful results.
 
 ## **Data & Folder Descriptions**
 
