@@ -4,10 +4,10 @@ This repository is the official implementation of plaque atlas construction for 
 
 This work aims to advance the understanding of the prevalence, progression, and characteristics of coronary atherosclerosis across different age and sex groups. We carried out a retrospective, consecutive, multi-center cohort study of 16,300 patients in China who underwent clinically indicated CCTA. By leveraging an AI-based coronary computed tomography angiography (CCTA) analysis system, we conducted a comprehensive analysis of the atherosclerotic plaque phenotypes at the patient-, segment- and point-levels. In this process, a series of three-dimensional (3D) coronary atlases that reveal statistical fine-grained spatial distribution of atherosclerotic plaques with their characteristics are constructed. 
 
-Here in this repository, we share the source code for constructing these atlases and provide example data for running it due to data sharing restrictions. Additionally, we provide statistical data derived from the study cohort:
-- the 3D point set of the mean shape of coronary artery tree.
-- frequency of each segment following AHA-18 coronary artery segmenting standard stratified by age and sex groups.
-- atlases related to existence of plaques, stenosis, and high-risk features stratified by age and sex groups.
+Here in this repository, we share the source code for constructing these atlases and provide example data for running it due to data sharing restrictions. Additionally, we provide statistical data derived from the study cohort (N=16,300):
+- The 3D point set of the mean shape of coronary artery tree.
+- Frequency of each segment following AHA-18 coronary artery segmenting standard stratified by age and sex groups.
+- coronary atlases revealing statistical fine-grained spatial distribution of plaques, stenosis, and high-risk features stratified by age and sex groups.
 
 <div align="center">
   <img src="figures/pla_prev_atlas.png" alt="Example Image" width="800">
