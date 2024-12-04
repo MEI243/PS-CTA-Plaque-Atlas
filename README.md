@@ -7,7 +7,7 @@ This work aims to advance the understanding of the prevalence, progression, and 
 Here in this repository, we share the source code for constructing these atlases and provide example data for running it due to data sharing restrictions. Additionally, we provide statistical data derived from the study cohort (N=16,300):
 - The 3D point set of the mean shape of coronary artery tree.
 - Frequency of each segment following AHA-18 coronary artery segmenting standard stratified by age and sex groups.
-- Coronary atlases revealing statistical fine-grained spatial distribution of plaques, stenosis, and high-risk features stratified by age and sex groups.
+- Atlases revealing statistical fine-grained spatial distribution of plaques, stenosis, and high-risk features stratified by age and sex groups.
 
 <div align="center">
   <img src="figures/pla_prev_atlas.png" alt="Example Image" width="800">
