@@ -1,6 +1,16 @@
+## Table of Contents
+- [Introduction](#introduction)
+- [Quick start](#quick-start)
+- [Usage details](#usage-details)
+  - [Step 1: Averaging_Ctl](#averaging_ctl)
+  - [Step 2: Plaque_mapping](#plaque_mapping)
+  - [Step 3: Visualization](#visualization)
+- [Data & Folder Descriptions](#data--folder-descriptions)
+
+
 ## Introduction
 
-This repository is the official implementation of plaque atlas construction for “Deciphering Age- and Sex-Specific Patterns of Coronary Artery Atherosclerosis: Multi-Level Insights from a Large Cohort Study in China”.
+This repository is the official implementation of plaque atlas construction for **“Deciphering Age- and Sex-Specific Patterns of Coronary Artery Atherosclerosis: Multi-Level Insights from a Large Cohort Study in China”**.
 
 This work aims to advance the understanding of the prevalence, progression, and characteristics of coronary atherosclerosis across different age and sex groups. We carried out a retrospective, consecutive, multi-center cohort study of 16,300 patients in China who underwent clinically indicated CCTA. By leveraging an AI-based coronary computed tomography angiography (CCTA) analysis system, we conducted a comprehensive analysis of the atherosclerotic plaque phenotypes at the patient-, segment- and point-levels. In this process, a series of three-dimensional (3D) coronary atlases that reveal statistical fine-grained spatial distribution of atherosclerotic plaques with their characteristics are constructed. 
 
@@ -14,12 +24,12 @@ Here in this repository, we share the source code for constructing these atlases
   <p><b>Figure 1.</b> Plaque prevalence atlas of the entire cohort.</p>
 </div>
 
-## Usage
+## Quick start
 
 1. The project runs in Python 3.9 environment with CPU.
-   Use following command to install required libraries in Python environment:
-    
     ```bash
+    conda create -n PS_CTA_Plaque_Atlas python=3.9
+    conda activate PS_CTA_Plaque_Atlas
     pip install -r requirements.txt
     ```
     
@@ -28,21 +38,26 @@ Here in this repository, we share the source code for constructing these atlases
     ```bash
     python demo.py
     ```
-    
-   Three steps are conducted:
-      - `Averaging_Ctl()`: Calculate the mean centerline shape of coronary tree as the template.
-          - `Averaging_Ctl().reorganize()` can be independently executed to get the targeted results with `mean_segment_shapes.json` and `mean_concat_pts.json` as inputs, derived from the whole cohort, instead of example data.
-          - `Averaging_Ctl().show_avg_shapes()` can be independently executed to visualize the centerline template.
-      - `Plaque_mapping()`: Mapping plaques detected in the cohort along with their characteristics to the template. Results aggregate characteristics of plaque mapped to a point in the coronary artery template as a set. Here, we obtain results from the example data.
-      - `Visualization()`: Statistical analysis and visualization of plaque characteristics stratified by age and sex groups.
-        The atlas data from the study cohort serves as inputs, rather than the example data. 
-          
-          - `Visualization().prevalence_ctl_dist()`: visualization of plaque prevalence atlases.
-          - `Visualization().char_ctl_dist()`: visualization of atlases related to stenosis, and high-risk features.
+## Usage details
+In `demo.py`, three steps are conducted:
+
+#### `Averaging_Ctl()`
+- Calculate the mean centerline shape of coronary tree as the template.
+- `Averaging_Ctl().reorganize()` can be independently executed to get the targeted results with `mean_segment_shapes.json` and `mean_concat_pts.json` as inputs, derived from the whole cohort, instead of example data.
+- `Averaging_Ctl().show_avg_shapes()` can be independently executed to visualize the centerline template.
+
+#### `Plaque_mapping()`
+- Mapping plaques detected in the cohort along with their characteristics to the template. Results aggregate characteristics of plaque mapped to a point in the coronary artery template as a set. Here, we obtain results from the example data.
+
+#### `Visualization()` 
+- Statistical analysis and visualization of plaque characteristics stratified by age and sex groups.
+The atlas data from the study cohort serves as inputs, rather than the example data. 
+- `Visualization().prevalence_ctl_dist()`: visualization of plaque prevalence atlases.
+- `Visualization().char_ctl_dist()`: visualization of atlases related to stenosis, and high-risk features.
+
+  Since the atlas data from our cohort was directly used, the statistical analysis part has been commented out. However, if needed, you can uncomment the relevant sections in the code to compute the atlas data based on the results from the previous step. The core function for this is `Visualization().get_draw_dict()`.
               
-              Since the atlas data from our cohort was directly used, the statistical analysis part has been commented out. However, if needed, you can uncomment the relevant sections in the code to compute the atlas data based on the results from the previous step. The core function for this is `Visualization().get_draw_dict()`.
-              
-          - **Note**: we use a small subset as example data here. Therefore, it is not accurate to calculate atlas data from the results of the previous step. To use your own data, ensure that plaque information and segment counts for a cohort with a sufficient number of subjects are provided to obtain statistically meaningful results.
+- **Note**: we use a small subset as example data here. Therefore, it is not accurate to calculate atlas data from the results of the previous step. To use your own data, ensure that plaque information and segment counts for a cohort with a sufficient number of subjects are provided to obtain statistically meaningful results.
 
 ## **Data & Folder Descriptions**
 
@@ -99,8 +114,8 @@ Plaque_Population_Study/
             - `plots_views/`: visualization of `*_stenosis_probs.json`.
     
 3. **`demo.py`**: main script to generate the plaque atlas.
-4. **`build_plaque_atlas.py`**: classes and functions for atlas construction
-5. **`utils.py`**: utility functions for data processing
+4. **`build_plaque_atlas.py`**: classes and functions for atlas construction.
+5. **`utils.py`**: utility functions for data processing.
 
 **Note**: all files with names ending in `_samples` are example data and their corresponding results.
 
