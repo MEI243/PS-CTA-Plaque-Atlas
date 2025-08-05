@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/898591496.svg)](https://doi.org/10.5281/zenodo.16741226)
 ## Table of Contents
 - [Introduction](#introduction)
 - [Quick start](#quick-start)
