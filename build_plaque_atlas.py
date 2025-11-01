@@ -731,7 +731,7 @@ class Plaque_mapping():
 
                 # ---------------------------------------
                 # if plaque at the start of lad
-                if (np.abs(distances[0]-0.29) < range_j / 2) and (j_seg_name=='LAD') and (len(j_ctl['LM'])!=0): # abs +0.3弥补离散点边界估计的误差
+                if (np.abs(distances[0]-0.29) < range_j / 2) and (j_seg_name=='LAD') and (len(j_ctl['LM'])!=0): # 
                     out_range = range_j/2-np.abs(distances[0])
                     distances_sup, accumulated_distances_sup = self.get_distance_array(j_ctl['LM'], -1)
                     indices_sup = np.where(np.abs(distances_sup) <= out_range)[0]
